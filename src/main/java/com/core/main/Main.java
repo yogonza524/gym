@@ -6,8 +6,10 @@
 
 package com.core.main;
 
+import com.core.managers.SocioManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 /**
  *
@@ -21,5 +23,10 @@ public class Main {
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
+    }
+    
+    @Bean
+    SocioManager socioManager(){
+        return new SocioManager();
     }
 }

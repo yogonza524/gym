@@ -20,9 +20,12 @@ import org.mongodb.morphia.Key;
 public abstract class BaseManager<T> {
 
     public abstract List<T> all();
-    public abstract T byId(Key<T> id);
+    public abstract T byKey(Key<T> id);
+    public abstract Key<T> add(T entity);
     public abstract boolean update(T entity, Class<T> clazz);
-    public abstract List<T> byId(String attributeName, Object value, Class<T> clazz);
+    public abstract T byId(String attributeName, Object value, Class<T> clazz);
+    public abstract boolean delete(T entity);
+    public abstract boolean deleteById(String id);
     
     public List<Field> getAllFields(List<Field> fields, Class<?> type) {
         fields.addAll(Arrays.asList(type.getDeclaredFields()));

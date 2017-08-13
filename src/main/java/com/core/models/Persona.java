@@ -25,7 +25,13 @@ public abstract class Persona extends Base implements Comparator<Persona>{
     @Property("tel") private String tel;
     @Property("cel") private String cel;
     @Property("nacimiento") private Date nacimiento;
+    
+    private String hash;
 
+    public String getHash() {
+        return super.id.toString();
+    }
+    
     public Persona() {
         super();
     }
@@ -84,6 +90,11 @@ public abstract class Persona extends Base implements Comparator<Persona>{
 
     public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{id = " + id.toString() + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", domicilio=" + domicilio + ", tel=" + tel + ", cel=" + cel + ", nacimiento=" + nacimiento + '}';
     }
     
     

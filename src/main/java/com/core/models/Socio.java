@@ -25,4 +25,14 @@ public class Socio extends Persona{
     public int compare(Persona o1, Persona o2) {
         return o1.getApellido().compareTo(o2.getApellido());
     }
+
+    public Date getFechaDeIngreso() {
+        return fechaDeIngreso;
+    }
+
+    public void setFechaDeIngreso(Date fechaDeIngreso) {
+        this.fechaDeIngreso = fechaDeIngreso;
+    }
+    
+    
 }
